@@ -1,11 +1,28 @@
 
 ### Questions
-* git merge lab - git push origin master threw an error
-* git log --graph
+* MacBeth Project in Section 02
+* defining the terms in git
+    * add vs merge vs push
+* forks
+* checkouts
 
 ### Objectives
 YWBAT
+* define pep8 standards
+    * code of conduct of code
+    * standard way of writing code in python
+    * standard format for python code
+    * makes things easier to read and understand
+    * use pep8 because other people might look at our code and we want them to feel at home. 
+* find some tools online that will autopep8 your code
+    * `conda install -c conda-forge jupyter_contrib_nbextensions`
 * define git
+    * version control system
+    * the objects that it is using are called repos
+    * why do we need version control?
+        * roll back, back up
+        * collaborating becomes less of a headache
+        * sharing work
 * perform branching and merges in git (remotely)
 * compare and contrast git commit to git push
 
@@ -15,89 +32,120 @@ YWBAT
 
 
 ```python
+# simple imports go at the top
+import math
+import json
+
 import pandas as pd
 import numpy as np
+import scipy.stats as scs
 
+from time import time
+
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split, GroupKFold
+
+
+
+# visualization tools go at the bottom, typically
 import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 # Pep 8 Standards (Because we aren't newbs)
 
+![](images/pep8.jpg)
+
+What is an IDE? (Interactive Development Environment)
+- It's a piece of software where you can write code
+
+Install Jupyter Notebook Extensions Here:
+ 
+`conda install -c conda-forge jupyter_contrib_nbextensions`
+
 
 ```python
-# Fix this coding cell
+class myClass:
+    def __init__(self):
+        pass
+
+    
+    def function1():
+        return None
+```
+
+
+```python
 x = 3
-y = 5
-x + y
+y = 4
+print(x+y)
 ```
 
-
-
-
-    8
-
+    7
 
 
 
 ```python
-# Now this one 
-# camel case thisIsCamelCase
-# this_is_snake_case
-# variables/methods/almost everything -> lowercase
-# classes -> uppercase
+# let's reformat the cell above for pep8 standards
+x = 3
+y = 4
 
-well_this_is_cool = lambda x: 2*x
-
-well_this_is_cool(8)
+print(x + y)
 ```
 
-
-
-
-    16
-
+    7
 
 
 
 ```python
-## Now also fix this one...
-whats_in_name = 2
-montague = 1
-capulet = 0
+# let's reformat this function
+def NewFunction(a, b):
+    return(a * b)
 
-print(montague + capulet == whats_in_name)
+
+def new_function(a, b):
+    return a*b
 ```
-
-    False
-
 
 
 ```python
-#time to write functions!...not really, we're pep-8ing some stuff
+class my_class():
+    
+    def myFunction(self, a=4, b=3):
+        return a*b
+    
+    
+# reformatting the class above for pep8 we get
 
-def my_function(a, b, c, d):
-    return a*b + c - d 
+class MyClass():
 
-
-print(my_function(3, 4, 2, 9))
+    def my_function(self, a=4, b=3):
+        return a*b
 ```
 
-    5
+# Git Discussions
 
+### Looking at Numpy
+
+* Why do people fork it? 
+    * store it on your local and to add enhancements
+    * to experiment and try stuff out
+* What's the difference between a branch and a fork?
+    * branch is connected to the master
+    * a fork is a snapshot that you take and remove it from the master
+    
+* Can you push a fork back to the master? 
+    * yes, use the online tool (pull request)
+    
+* what does checkout do? 
+    * moves you to a desired branch
+    
+* how do I check differences between branch and master? 
+    * `git diff`
 
 ### Assessment
 
-What is the purpose of version control?
-* keep a working file (so it doesn't break)
-* merge changes after testing
-* maintains the health of codebase
 
+```python
 
-What is pep-8?
-* formatting guide for python
-
-
-Should we use pep-8? I'm kinda curious what y'all think.
-* should code be dependent on pep-8 standards?
-* standards like pep-8 make sense
-* lines shouldn't be longer than 79 characters
+```
